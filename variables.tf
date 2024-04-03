@@ -2,6 +2,7 @@ variable "tools" {
   default = {
     prometheus = {
       instance_type = "t3.small"
+      iam_policy_rules = ["ec2:DescribeInstances"]
     }
   }
 }
