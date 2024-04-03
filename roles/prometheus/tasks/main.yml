@@ -10,6 +10,11 @@
     src: prometheus.service
     dest: /etc/systemd/system/prometheus.service
 
+- name: copy_prometheus.yml_config_file
+  ansible.builtin.template:
+    src: prometheus.yml
+    dest: /opt/prometheus-{{ version }}.linux-amd64/prometheus.yml
+
 - name: start_prometheus_service
   ansible.builtin.systemd_service:
     name: prometheus
