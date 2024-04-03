@@ -5,7 +5,8 @@ resource "aws_instance" "ec2" {
   iam_instance_profile = aws_iam_instance_profile.instance_profile.name
 
   tags = {
-    Name: var.tool_name
+    Name = var.tool_name
+    monitor = "yes"
   }
 }
 
