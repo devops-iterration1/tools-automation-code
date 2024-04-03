@@ -17,6 +17,14 @@ resource "aws_route53_record" "a_record" {
   ttl = 30
 }
 
+resource "aws_route53_record" "a_record_internal" {
+  name    = "${var.tool_name}-int"
+  type    = "A"
+  zone_id = var.zone_id
+  records = [aws_instance.ec2.private_ip]
+  ttl = 30
+}
+
 resource "aws_iam_role" "role" {
   name = "${var.tool_name}-role"
 
