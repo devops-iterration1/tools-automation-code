@@ -2,6 +2,7 @@ resource "aws_instance" "ec2" {
   ami           = data.aws_ami.my-ami.image_id
   instance_type = var.instance_type
   vpc_security_group_ids = [data.aws_security_group.my-sg.id]
+  iam_instance_profile = aws_iam_instance_profile.instance_profile.name
 
   tags = {
     Name: var.tool_name
@@ -36,4 +37,9 @@ resource "aws_iam_role" "role" {
   tags = {
     Name = "${var.tool_name}-role"
   }
+}
+
+resource "aws_iam_instance_profile" "instance_profile" {
+  name = "${var.tool_name}-role"
+  role = aws_iam_role.role.name
 }
