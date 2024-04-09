@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  prometheus-ansible:
+  prometheus-config-ansible:
     group: Terraform
     label_template: ${COUNT}
     lock_behavior: none
