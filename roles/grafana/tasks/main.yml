@@ -1,5 +1,5 @@
 - name: copy_grafana.repo_file
-  ansible.builtin.templates:
+  ansible.builtin.template:
     src: grafana.repo
     dest: /etc/yum.repos.d/grafana.repo
 
