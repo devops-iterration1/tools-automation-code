@@ -4,9 +4,11 @@ resource "aws_instance" "ec2" {
   vpc_security_group_ids = [data.aws_security_group.my-sg.id]
   iam_instance_profile = aws_iam_instance_profile.instance_profile.name
 
-  spot_options {
-    instance_interruption_behavior = "stop"
-    spot_instance_type = "persistent"
+  instance_market_options{
+    spot_options {
+      instance_interruption_behavior = "stop"
+      spot_instance_type = "persistent"
+    }
   }
 
   tags = {
