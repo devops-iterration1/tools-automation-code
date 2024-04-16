@@ -6,7 +6,11 @@ variable "tools" {
     }
     grafana = {
       instance_type = "t3.small"
-      iam_policy_rules = ["ec2:DescribeInstances"]
+      iam_policy_rules = []
+    }
+    vault = {
+      instance_type = "t3.small"
+      iam_policy_rules = []
     }
   }
 }

@@ -57,7 +57,7 @@ resource "aws_iam_role" "role" {
       Version = "2012-10-17"
       Statement = [
         {
-          Action   = var.iam_policy_rules
+          Action   = concat(var.dummy_policy, var.iam_policy_rules)
           Effect   = "Allow"
           Resource = "*"
         },
