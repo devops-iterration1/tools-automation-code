@@ -12,6 +12,10 @@ variable "tools" {
       instance_type = "t3.small"
       iam_policy_rules = []
     }
+    kibana = {
+      instance_type = "r7i.large"
+      iam_policy_rules = []
+    }
   }
 }
 
