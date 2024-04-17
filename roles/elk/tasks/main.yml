@@ -34,6 +34,16 @@
     regexp: '^#server.host'
     line: "server.host: 0.0.0.0"
 
+- name: start_kibana_service
+  ansible.builtin.systemd_service:
+    name: kibana
+    state: restarted
+    enabled: yes
+
+
+
+
+
 # Reset the password of the elastic built-in superuser with
 # '/usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic'.
 #
