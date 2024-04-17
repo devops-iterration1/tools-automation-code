@@ -31,7 +31,7 @@
 - name: update_kibana_ip
   ansible.builtin.lineinfile:
     path: /etc/kibana/kibana.yml
-    regexp: '^#server.host
+    regexp: '^#server.host'
     line: "server.host: 0.0.0.0"
 
 # Reset the password of the elastic built-in superuser with
