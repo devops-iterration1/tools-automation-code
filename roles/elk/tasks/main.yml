@@ -43,7 +43,7 @@
 
 
 ###
-####
+###
 # Reset the password of the elastic built-in superuser with
 # /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic
 #
