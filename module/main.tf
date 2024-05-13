@@ -15,6 +15,10 @@ resource "aws_instance" "ec2" {
   tags = {
     Name = var.tool_name
   }
+
+  lifecycle {
+    ignore_changes = [ami]
+  }
 }
 
 resource "aws_route53_record" "a_record" {
